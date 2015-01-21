@@ -1,16 +1,20 @@
+var square1 = {
+    x: 200, 
+    y: 200,
+    width: 20,
+    height: 20
+};
 function draw() {
   var canvas = document.getElementById('mainCanvas');
   if (canvas.getContext) {
     var ctx = canvas.getContext('2d');
-    ctx.beginPath();
-    ctx.arc(75,75,50,0,Math.PI*2,true); // Outer circle
-    ctx.moveTo(110,75);
-    ctx.arc(75,75,35,0,Math.PI,false);  // Mouth (clockwise)
-    ctx.moveTo(65,65);
-    ctx.arc(60,65,5,0,Math.PI*2,true);  // Left eye
-    ctx.moveTo(95,65);
-    ctx.arc(90,65,5,0,Math.PI*2,true);  // Right eye
-    ctx.stroke();
+    ctx.fillRect(square1.x, square1.y, square1.width, square1.height);
+
   }
 }
 draw();
+setInterval(function(){	
+    draw();
+    square1.x = square1.x + 1;
+},1000/30);
+
