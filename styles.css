@@ -1,1 +1,14 @@
-styles.css
+#mainCanvas {
+	background-color: green;
+}
+
+#canvasDiv {
+	width: 600px;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#title {
+	text-align: center;
+}
