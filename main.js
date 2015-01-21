@@ -2,11 +2,15 @@ function draw() {
   var canvas = document.getElementById('mainCanvas');
   if (canvas.getContext) {
     var ctx = canvas.getContext('2d');
-
-    ctx.fillRect(250,250,10,10);
-    ctx.clearRect(450,45,60,60);
-    ctx.strokeRect(50,50,50,50);
-    
+    ctx.beginPath();
+    ctx.arc(75,75,50,0,Math.PI*2,true); // Outer circle
+    ctx.moveTo(110,75);
+    ctx.arc(75,75,35,0,Math.PI,false);  // Mouth (clockwise)
+    ctx.moveTo(65,65);
+    ctx.arc(60,65,5,0,Math.PI*2,true);  // Left eye
+    ctx.moveTo(95,65);
+    ctx.arc(90,65,5,0,Math.PI*2,true);  // Right eye
+    ctx.stroke();
   }
 }
 draw();
