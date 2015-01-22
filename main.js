@@ -30,6 +30,8 @@ $('form').submit(function(){
   ctx.clearRect(0,0,600,500);
   var formWidth = $('#width').val();
   var formHeight = $('#height').val();
+  $('#width').val("");
+  $('#height').val("");
   addSquare(formWidth,formHeight);
   return false;
 });
