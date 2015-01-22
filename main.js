@@ -9,8 +9,24 @@ var square1 = {
 };
 
 setInterval(function(){
-    square1.x = square1.x + 1;
+    /*square1.x = square1.x + 1;
     ctx.clearRect(0,0,600,500);
-    ctx.fillRect(square1.x, square1.y, square1.width, square1.height);
+    ctx.strokeRect(square1.x, square1.y, square1.width, square1.height);*/
 },1000/30);
 
+function addSquare(width, height) {
+  var square = {
+    x: Math.floor(Math.random() * 600) + 1, 
+    y: Math.floor(Math.random() * 500) + 1,
+    width: width,
+    height: height
+  };
+  ctx.strokeRect(square.x, square.y, square.width, square.height);
+  console.log("working");
+};
+
+$('form').submit(function(){
+  console.log("submitted");
+  addSquare(30,30);
+  return false;
+});
