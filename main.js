@@ -27,6 +27,8 @@ function addSquare(width, height) {
 
 $('form').submit(function(){
   console.log("submitted");
-  addSquare(30,30);
+  var formWidth = $('#width').val();
+  var formHeight = $('#height').val();
+  addSquare(formWidth,formHeight);
   return false;
 });
