@@ -16,8 +16,8 @@ setInterval(function(){
 
 function addSquare(width, height) {
   var square = {
-    x: Math.floor(Math.random() * 600) + 1, 
-    y: Math.floor(Math.random() * 500) + 1,
+    x: 300, 
+    y: 250,
     width: width,
     height: height
   };
@@ -27,6 +27,7 @@ function addSquare(width, height) {
 
 $('form').submit(function(){
   console.log("submitted");
+  ctx.clearRect(0,0,600,500);
   var formWidth = $('#width').val();
   var formHeight = $('#height').val();
   addSquare(formWidth,formHeight);
