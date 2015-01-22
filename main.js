@@ -1,13 +1,6 @@
 var canvas = document.getElementById('mainCanvas');
 var ctx = canvas.getContext('2d');
 
-var square1 = {
-   x: 200, 
-   y: 200,
-   width: 20,
-   height: 20
-};
-
 function addSquare(width, height) {
    var square = {
       x: 300, 
@@ -16,16 +9,26 @@ function addSquare(width, height) {
       height: height
   };
   ctx.strokeRect(square.x, square.y, square.width, square.height);
-  console.log("working");
 };
 
+
+// Executes when the form is submitted
 $('form').submit(function(){
-  console.log("submitted");
+  
+  // Clears previous rectangle
   ctx.clearRect(0,0,600,500);
+
+  // Stores values from the input
   var formWidth = $('#width').val();
   var formHeight = $('#height').val();
+
+  // Clears the input from the form
   $('#width').val("");
   $('#height').val("");
+
+  // Calls the addSquare function that is declared above
   addSquare(formWidth,formHeight);
+
+  // Stops the page from refreshing
   return false;
 });
